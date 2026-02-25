@@ -1,45 +1,82 @@
-GC Content Calculator
+# GC Content Calculator
 
-This Python script calculates the GC content of a DNA sequence.
+A Python tool that calculates the GC content of a DNA sequence with biological validation and input cleaning.
 
-What is GC content?
+
+## What is GC Content?
 
 GC content refers to the percentage of nucleotides in a DNA sequence that are either:
 
-G (Guanine)
+- **G (Guanine)**
+- **C (Cytosine)**
 
-C (Cytosine)
-
-GC-rich DNA regions are more thermally stable because G-C base pairs form three hydrogen bonds compared to two in A-T pairs.
+GC-rich DNA regions are more thermally stable because G–C base pairs form three hydrogen bonds compared to two in A–T pairs.
 
 GC content is commonly used in:
 
-Genome analysis
+- Genome analysis  
+- Comparing species  
+- Sequencing quality assessment  
+- Studying genomic stability  
 
-Comparing species
 
-Sequencing quality assessment
+This script:
 
-How it works
+- Accepts a DNA sequence from the user  
+- Converts lowercase input to uppercase  
+- Removes whitespace and newline characters  
+- Validates biological bases (A, T, G, C, N)  
+- Ignores invalid characters and reports them  
+- Excludes ambiguous base **N** from GC percentage calculation  
+- Prevents division-by-zero errors  
+- Displays formatted analytical results  
 
-The script:
 
-Accepts a DNA sequence from the user
+## How It Works
 
-Converts it to uppercase
+The program follows three main steps:
 
-Calculates:
+1. **Clean the input**
+   - Standardizes formatting.
 
-Total sequence length
+2. **Validate the sequence**
+   - Keeps only A, T, G, C, and N.
+   - Detects and reports invalid characters.
 
-Total number of G and C bases
+3. **Calculate GC content**
+   - Computes GC% using only valid A/T/G/C bases.
+   - Excludes ambiguous bases (N).
 
-GC percentage
 
-Displays formatted results
+## Example
 
-Example
-Enter a DNA sequence: ATGCGCGT
-Sequence length: 8
-GC count: 5
-GC content: 62.50%
+**Input:**
+ATGCGX12NN
+
+**Output:**
+
+--- Results ---
+Valid DNA length (A/T/G/C only): 5
+GC count: 3
+AT count: 2
+GC content: 60.00%
+
+Warning: Invalid characters detected and ignored:
+1, 2, X
+
+## How to Run
+
+1. Make sure Python is installed.
+2. Run the script in your terminal:
+   python gc_content.py
+
+3. Enter a DNA sequence when prompted.
+
+## Project Purpose
+
+This project demonstrates:
+
+- Basic bioinformatics computation  
+- Biological data validation  
+- Modular Python programming  
+- Defensive programming practices
