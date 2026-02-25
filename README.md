@@ -56,6 +56,7 @@ ATGCGX12NN
 **Output:**
 
 --- Results ---
+
 Valid DNA length (A/T/G/C only): 5
 GC count: 3
 AT count: 2
